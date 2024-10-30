@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            margin-top: 10px;
+            padding: 10px;
+            width: calc(100% - 22px);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="greetingContainer">
+        <h1>¡Bienvenido!</h1>
+        <label for="nameInput">Introduce tu nombre:</label>
+        <input type="text" id="nameInput" placeholder="Tu nombre aquí" required>
+        <button id="submitButton">Enviar</button>
+        <p id="outputMessage"></p>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (name) {
+                document.getElementById('outputMessage').textContent = `¡Hola, ${name}! Bienvenido a nuestra página.`;
+                document.getElementById('greetingContainer').style.display = 'none'; // Oculta el formulario
+            } else {
+                alert('Por favor, introduce tu nombre.');
+            }
+        });
+    </script>
+</body>
+</html>
